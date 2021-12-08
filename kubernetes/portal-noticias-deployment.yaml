@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portal-noticias-deployment
+spec:
+  template: 
+    metadata:
+      name: portal-noticias
+      labels:
+        app: portal-noticias
+    spec:
+      containers:
+        - name: portal-noticias-container
+          image: castroclucas82/portal-noticias
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: portal-configmap
+          livenessProbe:
+           # qqr coisa != de 200 ~ 400 é considerado erro
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 10
+            failureThreshold: 3
+            # definir atraso antes de executar o primeiro teste
+            initialDelaySeconds: 20
+          readinessProbe:
+           # qqr coisa != de 200 ~ 400 é considerado erro
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 10
+            #reinicia a aplicacao dps de tres erros
+            failureThreshold: 5
+            # definir atraso antes de executar o primeiro teste
+            initialDelaySeconds: 3
+          #escalonamento de pods
+          resources:
+            requests:
+              cpu: 10m
+  replicas: 3
+  selector:
+    matchLabels:
+      #precisa ser igual ao labels/app do template
+      app: portal-noticias

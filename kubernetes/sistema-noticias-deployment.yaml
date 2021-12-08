@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sistema-noticias-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: sistema-noticias
+      labels:
+        app: sistema-noticias
+    spec:
+      containers:
+        - name: sistema-noticias-container
+          image: castroclucas82/sistema-noticias
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: sistema-configmap
+  selector:
+    matchLabels:
+      # nome deve ser igual ao labels > app
+      app: sistema-noticias              

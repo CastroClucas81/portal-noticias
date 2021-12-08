@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-1
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    # ler e escrever apenas um pod por vez
+    - ReadWriteOnce
+    #nome do disco q eu quero utilziar... no caso, do google cloud
+  gcePersistentDisk:
+    pdName: pv-disk
+  storageClassName: standard
