@@ -26,3 +26,23 @@ software criem e mantenham seus aplicativos web sem se preocupar com a infraestr
 em que esses aplicativos estão rodando
 
 # DIAGRAMA SEQUÊNCIA NOVA NOTÍCIA
+![D  SEQUENCIA C  NOVA NOTÍCIA](https://user-images.githubusercontent.com/68257824/145140155-ee69c283-a947-4110-a6fa-390f1f39a072.png)
+
+# DIAGRAMA DE SEQUÊNCIA LOGIN USUÁRIO
+![D  SEQUENCIA LOGIN USUARIO](https://user-images.githubusercontent.com/68257824/145140247-2b2146d8-6aa9-4e49-a18b-f7987af28bae.png)
+
+# VISÃO DEPLOYMENT PODS
+![deployment](https://user-images.githubusercontent.com/68257824/145140319-41be97e2-8227-43eb-b2c6-e8328263bef3.jpeg)
+
+# STORAGECLASS
+![WhatsApp Image 2021-12-07 at 23 58 27](https://user-images.githubusercontent.com/68257824/145140637-6c091335-9c99-4f5f-9611-f732be127e0e.jpeg)
+
+
+# STATEFULSETS
+![save-assets](https://user-images.githubusercontent.com/68257824/145140402-c124285a-7505-46f9-b3c0-a9cf9c9504d3.jpeg)
+
+
+# VISÃO ARQUITETURAL GERAL
+![geral](https://user-images.githubusercontent.com/68257824/145140278-9f911b8b-a749-494c-b213-fd0b8b965b8d.jpeg)
+
+
